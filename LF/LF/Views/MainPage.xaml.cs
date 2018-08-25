@@ -23,6 +23,7 @@ namespace LF.Views
             Children.Add(new MeusPedidosPage() { Title = "", Icon = "pedidos.png" });
             Children.Add(new CarrinhoPage() { Title = "", Icon = "carrinho.png" });
 
+
         }
     }
 }

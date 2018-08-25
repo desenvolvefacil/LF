@@ -30,5 +30,13 @@ namespace LF.Views
 
             ProdutosListView.ItemsSource = Items;
         }
+
+        private void Add_Carrinho_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            ProdutoModel produto =(ProdutoModel)button.CommandParameter;
+
+            //DisplayAlert("Titulo",produto.Valor.ToString(),"Cancelar");
+        }
     }
 }

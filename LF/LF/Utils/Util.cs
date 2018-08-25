@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LF.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,5 +12,8 @@ namespace LF.Utils
         public static int CAT_LANCHES_ID = 1;
         public static int CAT_BEBIDAS_ID = 2;
         public static int CAT_COMBOS_ID = 3;
+
+        public static PedidoModel PedidoAtual= null;
+        public static UsuarioModel UsuarioLogado=null;
     }
 }

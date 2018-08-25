@@ -37,7 +37,7 @@
                                 </StackLayout>
 
                                 <Label Grid.Column="1" Grid.Row="0" Text="{Binding Valor,StringFormat=\{0:C\}}"/>
-                                <Button Text="Pedir" Grid.Column="1" Grid.Row="1" />
+                                <Button Text="Pedir" Grid.Column="1" Grid.Row="1" Clicked="Add_Carrinho_Clicked" CommandParameter="{Binding}" />
 
                             </Grid>
 
