@@ -31,7 +31,7 @@ namespace LF.Views
             ProdutosListView.ItemsSource = Items;
         }
 
-        private void Add_Carrinho_Clicked(object sender, EventArgs e)
+        private  void Add_Carrinho_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             ProdutoModel produto =(ProdutoModel)button.CommandParameter;
@@ -45,7 +45,10 @@ namespace LF.Views
 
             Util.PedidoAtual.AddProduto(produto);
 
-            Navigation.PushAsync(new CarrinhoPage());
+
+            //navega até a aba Carrinho
+            var parentPage = this.Parent as TabbedPage;
+            parentPage.CurrentPage = parentPage.Children[4];
         }
     }
 }
