@@ -46,7 +46,7 @@ namespace LF.Models
                 {
                     case "1":
                         {
-                            return "Pago"
+                            return "Pago";
                     }
                     default:
                         {

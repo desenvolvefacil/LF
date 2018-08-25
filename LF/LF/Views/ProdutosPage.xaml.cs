@@ -37,6 +37,15 @@ namespace LF.Views
             ProdutoModel produto =(ProdutoModel)button.CommandParameter;
 
             //DisplayAlert("Titulo",produto.Valor.ToString(),"Cancelar");
+
+            if (Util.PedidoAtual == null)
+            {
+                Util.PedidoAtual = new PedidoModel();
+            }
+
+            Util.PedidoAtual.AddProduto(produto);
+
+            Navigation.PushAsync(new CarrinhoPage());
         }
     }
 }
