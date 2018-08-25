@@ -141,4 +141,19 @@
       <Name>LF</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bebidas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\carrinho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\combos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lanches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pedidos.png" />
+  </ItemGroup>
 </Project>

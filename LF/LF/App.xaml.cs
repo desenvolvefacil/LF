@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using LF.Views;
+using System.Globalization;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace LF
@@ -20,6 +21,9 @@ namespace LF
         protected override void OnStart()
         {
             // Handle when your app starts
+            // Define o Idioma para Português do Brasil
+            var userSelectedCulture = new CultureInfo("pt-BR");
+            System.Threading.Thread.CurrentThread.CurrentCulture = userSelectedCulture;
         }
 
         protected override void OnSleep()

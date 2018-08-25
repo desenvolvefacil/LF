@@ -10,6 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="4.6.30" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\CarrinhoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MeusPedidosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProdutosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
