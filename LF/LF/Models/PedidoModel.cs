@@ -81,9 +81,9 @@ namespace LF.Models
             //this.ordenaItens();
         }
 
-        public void AddQtd(int index)
+        public void AddQtd(ProdutoModel p)
         {
-            //let index = this._itens.findIndex(o=>o.produto.id==IdProduto);
+            int index = this.Items.FindIndex(o=>o.Produto.Id==p.Id);
 
             this.Items[index].Qtd++;
         }

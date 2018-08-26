@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
+using Xamarin.Forms;
 
 namespace LF.Models
 {
@@ -29,6 +30,30 @@ namespace LF.Models
             get
             {
                 return this.Qtd * this.Produto.Valor;
+            }
+        }
+
+        public string NomeProduto
+        {
+            get
+            {
+                return Produto.Nome;
+            }
+        }
+
+        public ImageSource FotoProduto
+        {
+            get
+            {
+                return Produto.FotoProduto;
+            }
+        }
+
+        public float ValorProduto
+        {
+            get
+            {
+                return Produto.Valor;
             }
         }
     }

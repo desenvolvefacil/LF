@@ -13,7 +13,7 @@ namespace LF.Utils
         public static int CAT_BEBIDAS_ID = 2;
         public static int CAT_COMBOS_ID = 3;
 
-        public static PedidoModel PedidoAtual= null;
+        public static PedidoModel PedidoAtual= new PedidoModel();
         public static UsuarioModel UsuarioLogado=null;
     }
 }
