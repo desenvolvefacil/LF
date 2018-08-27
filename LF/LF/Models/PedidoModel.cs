@@ -93,14 +93,16 @@ namespace LF.Models
             //let index = this._itens.findIndex(o=>o.produto.id==IdProduto);
             int index = this.Items.FindIndex(o => o.Produto.Id == p.Id);
 
-            this.Items[index].RemQtd();
-
             //caso o produto seja zerado, remove do pedido
-            if (this.Items[index].Qtd <= 0)
+            if (this.Items[index].Qtd - 1 <= 0)
             {
                 this.Items.RemoveAt(index);
 
                 //this.ordenaItens();
+            }
+            else
+            {
+                this.Items[index].RemQtd();
             }
         }
 
