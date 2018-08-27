@@ -42,7 +42,7 @@ namespace LF.Views
                 Util.PedidoAtual.AddQtd(it.Produto);
             });*/
 
-            Util.PedidoAtual.RemQtd(it.Produto);
+            Util.PedidoAtual.RemQtd(it);
 
             CarrinhoListView.EndRefresh();
         }
@@ -59,7 +59,7 @@ namespace LF.Views
                 Util.PedidoAtual.AddQtd(it.Produto);
             });*/
 
-            Util.PedidoAtual.AddQtd(it.Produto);
+            Util.PedidoAtual.AddQtd(it);
 
             CarrinhoListView.EndRefresh();
 

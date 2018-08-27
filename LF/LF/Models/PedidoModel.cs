@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml.Serialization;
+using Xamarin.Forms;
 
 namespace LF.Models
 {
@@ -10,9 +14,10 @@ namespace LF.Models
     {
         public PedidoModel()
         {
-            this.Items = new List<ItemPedidoModel>();
+            this.Items = new ObservableCollection<ItemPedidoModel>();
             this.Id = 0;
         }
+
 
         [XmlElement(ElementName = "id")]
         public int Id { get; set; }
@@ -21,7 +26,7 @@ namespace LF.Models
         public int IdCliente { get; set; }
 
         [XmlElement(ElementName = "items")]
-        public List<ItemPedidoModel> Items { get; set; }
+        public ObservableCollection<ItemPedidoModel> Items { get; set; }
 
         [XmlElement(ElementName = "numeroMesa")]
         public int NumeroMesa { get; set; }
@@ -59,7 +64,15 @@ namespace LF.Models
 
         public void AddProduto(ProdutoModel p) {
             //verifica se jรก existe o produto
-            int index = Items.FindIndex(o => o.Produto.Id == p.Id);
+            int index = -1;
+            for(int i=0; i< Items.Count;i++)
+            {
+                if (Items[i].Produto.Id == p.Id)
+                {
+                    index = i;
+                    break;
+                }
+            }
 
             if (index < 0) {
                 ItemPedidoModel it = new ItemPedidoModel(p);
@@ -72,33 +85,31 @@ namespace LF.Models
             }
         }
 
-        public void RemProduto(ProdutoModel p)
+        public void RemProduto(ItemPedidoModel it)
         {
-            int index = Items.FindIndex(o => o.Produto.Id == p.Id);
+            int index = Items.IndexOf(it);
 
             this.Items.RemoveAt(index);
 
             //this.ordenaItens();
         }
 
-        public void AddQtd(ProdutoModel p)
+        public void AddQtd(ItemPedidoModel it)
         {
-            int index = this.Items.FindIndex(o=>o.Produto.Id==p.Id);
+            int index = Items.IndexOf(it);
 
             this.Items[index].AddQtd();
         }
 
-        public void RemQtd(ProdutoModel p)
+        public void RemQtd(ItemPedidoModel it)
         {
             //let index = this._itens.findIndex(o=>o.produto.id==IdProduto);
-            int index = this.Items.FindIndex(o => o.Produto.Id == p.Id);
+            int index = Items.IndexOf(it);
 
             //caso o produto seja zerado, remove do pedido
             if (this.Items[index].Qtd - 1 <= 0)
             {
                 this.Items.RemoveAt(index);
-
-                //this.ordenaItens();
             }
             else
             {
@@ -110,9 +121,9 @@ namespace LF.Models
             get{
                 this.ValorTotal = 0;
 
-                this.Items.ForEach(element => {
+                /*this.Items.ForEach(element => {
                     this.ValorTotal += element.ValorTotal;
-                });
+                });*/
 
                 return this.ValorTotal;
             }
