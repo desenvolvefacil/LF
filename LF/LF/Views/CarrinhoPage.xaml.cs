@@ -24,25 +24,42 @@ namespace LF.Views
         {
             base.OnAppearing();
 
+            CarrinhoListView.ItemsSource = null;
+
             CarrinhoListView.ItemsSource = Util.PedidoAtual.Items;
+
         }
 
         private void Rem_Carrinho_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void Add_Carrinho_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             ItemPedidoModel it = (ItemPedidoModel)button.CommandParameter;
 
             CarrinhoListView.BeginRefresh();
 
-            await Task.Run(() =>
+            /*await Task.Run(() =>
             {
                 Util.PedidoAtual.AddQtd(it.Produto);
-            });
+            });*/
+
+            Util.PedidoAtual.RemQtd(it.Produto);
+
+            CarrinhoListView.EndRefresh();
+        }
+
+        private void Add_Carrinho_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            ItemPedidoModel it = (ItemPedidoModel)button.CommandParameter;
+
+            CarrinhoListView.BeginRefresh();
+
+            /*await Task.Run(() =>
+            {
+                Util.PedidoAtual.AddQtd(it.Produto);
+            });*/
+
+            Util.PedidoAtual.AddQtd(it.Produto);
 
             CarrinhoListView.EndRefresh();
 

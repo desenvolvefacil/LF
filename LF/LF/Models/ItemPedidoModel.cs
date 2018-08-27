@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml.Serialization;
 using Xamarin.Forms;
@@ -7,10 +9,19 @@ using Xamarin.Forms;
 namespace LF.Models
 {
     [Serializable]
-    public class ItemPedidoModel
+    public class ItemPedidoModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs((propertyName)));
+        }
+
+
         [XmlElement(ElementName = "qtd")]
         public int Qtd { get; set; }
+           
 
         [XmlElement(ElementName = "produto")]
         public ProdutoModel Produto;
@@ -55,6 +66,22 @@ namespace LF.Models
             {
                 return Produto.Valor;
             }
+        }
+
+        public void AddQtd()
+        {
+            this.Qtd++;
+
+            OnPropertyChanged("Qtd");
+            OnPropertyChanged("ValorTotal");
+        }
+
+        public void RemQtd()
+        {
+            this.Qtd--;
+
+            OnPropertyChanged("Qtd");
+            OnPropertyChanged("ValorTotal");
         }
     }
 }
