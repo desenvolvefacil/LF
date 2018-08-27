@@ -39,12 +39,6 @@ namespace LF.Views
 
             CarrinhoListView.BeginRefresh();
 
-            //CarrinhoListView.ItemsSource = null;
-
-            Util.PedidoAtual.AddQtd(it.Produto);
-
-            //CarrinhoListView.ItemsSource = Util.PedidoAtual.Items;
-
             await Task.Run(() =>
             {
                 Util.PedidoAtual.AddQtd(it.Produto);
