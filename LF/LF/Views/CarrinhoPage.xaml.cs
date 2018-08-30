@@ -28,6 +28,7 @@ namespace LF.Views
 
             CarrinhoListView.ItemsSource = Util.PedidoAtual.Items;
 
+            TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
         private void Rem_Carrinho_Clicked(object sender, EventArgs e)
@@ -45,6 +46,8 @@ namespace LF.Views
             Util.PedidoAtual.RemQtd(it);
 
             CarrinhoListView.EndRefresh();
+
+            TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
         private void Add_Carrinho_Clicked(object sender, EventArgs e)
@@ -62,6 +65,8 @@ namespace LF.Views
             Util.PedidoAtual.AddQtd(it);
 
             CarrinhoListView.EndRefresh();
+
+            TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
     }

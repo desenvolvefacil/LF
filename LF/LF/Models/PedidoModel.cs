@@ -43,7 +43,7 @@ namespace LF.Models
         [XmlElement(ElementName = "hora")]
         public string Hora { get; set; }
 
-        [XmlElement(ElementName = "valorTotal")]
+        [XmlIgnore]
         public float ValorTotalPedido
         {
             get
