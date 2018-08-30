@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using LF.Views;
 using System.Globalization;
+using LF.Models;
+using LF.WS;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace LF
@@ -13,7 +15,6 @@ namespace LF
         public App()
         {
             InitializeComponent();
-
 
             MainPage = new MainPage();
         }

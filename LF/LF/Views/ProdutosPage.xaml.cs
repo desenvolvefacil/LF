@@ -29,6 +29,19 @@ namespace LF.Views
             List<ProdutoModel> Items = await new ProdutoWS().GetProdutosAsync(IdCategoria);
 
             ProdutosListView.ItemsSource = Items;
+
+
+            /*
+            //teste para verificar o post de cadastro
+            UsuarioModel u = new UsuarioModel();
+            u.Email = "email@email.com";
+            u.Nome = "Novo Usuaio";
+            u.Senha = "senha";
+
+            u = await new UsuarioWs().AddUsuario(u);
+
+            u.Id.ToString();
+            */
         }
 
         private  void Add_Carrinho_Clicked(object sender, EventArgs e)

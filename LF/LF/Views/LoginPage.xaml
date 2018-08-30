@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LF.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Entry x:Name="LoginEmail" Placeholder="Digite seu Email" Keyboard="Email" />
+            <Entry x:Name="LoginSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
+            <Button Text="Logar" Clicked="Logar_Clicked"/>
+
+            <Label Text="Cadastre-se" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Entry x:Name="CadastroNome" Placeholder="Digite seu Nome" />
+            <Entry x:Name="CadastroEmail" Placeholder="Digite seu Email" Keyboard="Email" />
+            <Entry x:Name="CadastroSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
+            <Button Text="Cadastrar" Clicked="Cadastrar_Clicked"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
