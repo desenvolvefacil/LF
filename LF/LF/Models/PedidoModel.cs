@@ -43,6 +43,23 @@ namespace LF.Models
         [XmlElement(ElementName = "hora")]
         public string Hora { get; set; }
 
+        [XmlElement(ElementName = "valorTotal")]
+        public float ValorTotalPedido
+        {
+            get
+            {
+                this.ValorTotal = 0;
+
+                foreach (ItemPedidoModel item in Items)
+                {
+                    ValorTotal += item.ValorTotal;
+                }
+
+                return this.ValorTotal;
+            }
+        }
+
+        [XmlIgnore]
         public string NomeStatus
         {
             get
@@ -52,7 +69,7 @@ namespace LF.Models
                     case "1":
                         {
                             return "Pago";
-                    }
+                        }
                     default:
                         {
                             return "Pendente";
@@ -62,10 +79,11 @@ namespace LF.Models
         }
 
 
-        public void AddProduto(ProdutoModel p) {
+        public void AddProduto(ProdutoModel p)
+        {
             //verifica se jรก existe o produto
             int index = -1;
-            for(int i=0; i< Items.Count;i++)
+            for (int i = 0; i < Items.Count; i++)
             {
                 if (Items[i].Produto.Id == p.Id)
                 {
@@ -74,13 +92,16 @@ namespace LF.Models
                 }
             }
 
-            if (index < 0) {
+            if (index < 0)
+            {
                 ItemPedidoModel it = new ItemPedidoModel(p);
 
                 this.Items.Add(it);
 
                 //this.ordenaItens();
-            } else {
+            }
+            else
+            {
                 this.Items[index].Qtd++;
             }
         }
@@ -101,6 +122,7 @@ namespace LF.Models
             this.Items[index].AddQtd();
         }
 
+
         public void RemQtd(ItemPedidoModel it)
         {
             //let index = this._itens.findIndex(o=>o.produto.id==IdProduto);
@@ -117,16 +139,6 @@ namespace LF.Models
             }
         }
 
-        public float ValorTotalPedido{
-            get{
-                this.ValorTotal = 0;
-
-                /*this.Items.ForEach(element => {
-                    this.ValorTotal += element.ValorTotal;
-                });*/
-
-                return this.ValorTotal;
-            }
+        
     }
-}
 }

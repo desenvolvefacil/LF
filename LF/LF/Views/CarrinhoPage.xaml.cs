@@ -62,8 +62,6 @@ namespace LF.Views
             Util.PedidoAtual.AddQtd(it);
 
             CarrinhoListView.EndRefresh();
-
-
         }
 
     }
