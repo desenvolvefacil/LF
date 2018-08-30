@@ -12,11 +12,21 @@ namespace LF.WS
     {
         [Get("/produtos/{IdCategoria}")]
         Task<List<ProdutoModel>> GetProdutosAsync(int IdCategoria);
+
+        [Post("/usuario/")]
+        Task<UsuarioModel> AddCliente([Body]UsuarioModel usu);
     }
 
 
     public class ProdutoWS : IProdutoApi
     {
+        public async Task<UsuarioModel> AddCliente(UsuarioModel usu)
+        {
+            var response = RestService.For<IProdutoApi>(Util.URL_API);
+
+            return await response.AddCliente(usu);
+        }
+
         public async Task<List<ProdutoModel>> GetProdutosAsync(int IdCategoria)
         {
             var response = RestService.For<IProdutoApi>(Util.URL_API);
@@ -24,4 +34,6 @@ namespace LF.WS
             return await response.GetProdutosAsync(IdCategoria);
         }
     }
+
+
 }

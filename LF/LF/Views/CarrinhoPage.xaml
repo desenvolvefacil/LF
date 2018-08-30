@@ -106,7 +106,7 @@
                         <Label Grid.Column="1" Grid.Row="1" Text="Nº Mesa" FontAttributes="Bold" />
                         <Entry Grid.Column="2" x:Name="NumeroMesaEntry" Grid.Row="1" Text="" Keyboard="Numeric" />
 
-                        <Button Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="2" Text="Fechar Pedido" />
+                        <Button Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="2" Text="Fechar Pedido" Clicked="Fechar_Pedido_Clicked" />
                     </Grid>
                 </ListView.Footer>
             </ListView>
