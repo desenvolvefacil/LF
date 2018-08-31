@@ -16,7 +16,7 @@ namespace LF.WS
         Task<UsuarioModel> LoginUsuario([Body]UsuarioModel usu);
     }
 
-    public class UsuarioWs: IUsuarioApi
+    public class UsuarioWS: IUsuarioApi
     {
         public async Task<UsuarioModel> AddUsuario(UsuarioModel usu)
         {

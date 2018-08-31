@@ -1,5 +1,6 @@
 ﻿using LF.Models;
 using LF.Utils;
+using LF.WS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +70,7 @@ namespace LF.Views
             TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
-        private void Fechar_Pedido_Clicked(object sender, EventArgs e)
+        private async void Fechar_Pedido_Clicked(object sender, EventArgs e)
         {
             //verifica se tem items no Pedido
             if (Util.PedidoAtual != null && Util.PedidoAtual.Items.Count > 0)
@@ -94,7 +95,22 @@ namespace LF.Views
                     }
                     else
                     {
-                        //finaliza o pedido
+                        //finaliza o pedido no ws
+                        PedidoModel ped = await new PedidoWS().AddPedidoAsyc(Util.PedidoAtual);
+                        
+                        if(ped!=null && ped.Id > 0)
+                        {
+                            await DisplayAlert(ped.Id.ToString(), "Pedido Realizado com Sucesso", "Fechar");
+
+                            //zera o pedido atual
+                            Util.PedidoAtual = null;
+
+                            //redireciona pra tela de pedidos
+                            var parentPage = this.Parent as TabbedPage;
+                            parentPage.CurrentPage = parentPage.Children[3];
+
+                        }
+
                     }
                 }
             }

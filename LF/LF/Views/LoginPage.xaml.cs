@@ -26,7 +26,7 @@ namespace LF.Views
         {
             UsuarioModel usu = new UsuarioModel() { Email=LoginEmail.Text,Senha=LoginSenha.Text};
 
-            usu = await new UsuarioWs().LoginUsuario(usu);
+            usu = await new UsuarioWS().LoginUsuario(usu);
 
             if (usu!=null && usu.Id > 0)
             {
@@ -67,7 +67,7 @@ namespace LF.Views
                         //define e cadastra o usuario no ws
                         UsuarioModel usu = new UsuarioModel() { Nome = CadastroNome.Text, Senha = CadastroSenha.Text, Email = CadastroEmail.Text };
 
-                        usu = await new UsuarioWs().AddUsuario(usu);
+                        usu = await new UsuarioWS().AddUsuario(usu);
 
                         if (usu != null && usu.Id > 0)
                         {

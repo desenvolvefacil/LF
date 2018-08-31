@@ -35,7 +35,7 @@ namespace LF.Models
             }
         }
 
-
+        [XmlIgnore]
         public float ValorTotal
         {
             get
@@ -44,6 +44,7 @@ namespace LF.Models
             }
         }
 
+        [XmlIgnore]
         public string NomeProduto
         {
             get
@@ -52,6 +53,7 @@ namespace LF.Models
             }
         }
 
+        [XmlIgnore]
         public ImageSource FotoProduto
         {
             get
@@ -60,6 +62,7 @@ namespace LF.Models
             }
         }
 
+        [XmlIgnore]
         public float ValorProduto
         {
             get
