@@ -22,10 +22,23 @@ namespace LF.Views
         {
             if (Util.UsuarioLogado == null)
             {
-                Navigation.PushModalAsync(new LoginPage());
-                //Navigation.PushAsync(new LoginPage());
+                AbreTelaLoginCadastro();
             }
         }
+
+        private async void AbreTelaLoginCadastro()
+        {
+            await Navigation.PushModalAsync(new LoginPage());
+            //Navigation.PushAsync(new LoginPage());
+
+            //caso retorne sem usuario volta pra tela inicial
+            if (Util.UsuarioLogado == null)
+            {
+                var parentPage = this.Parent as TabbedPage;
+                parentPage.CurrentPage = parentPage.Children[0];
+            }
+        }
+
 
     }
 }

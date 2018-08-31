@@ -16,6 +16,7 @@ namespace LF.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
+
 		public LoginPage ()
 		{
 			InitializeComponent ();
@@ -31,7 +32,7 @@ namespace LF.Views
             {
                 Util.UsuarioLogado = usu;
 
-                await Navigation.PopModalAsync();
+                Navigation.PopModalAsync();
             }
         }
 

@@ -15,7 +15,8 @@ namespace LF.Views
             InitializeComponent();
 
             //deixa a barra de menu na parte debaixo no android
-            On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            //da pani nos icones
+            //On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             Children.Add(new ProdutosPage() { Title = "", Icon = "lanches.png", IdCategoria= Util.CAT_LANCHES_ID});
             Children.Add(new ProdutosPage() { Title = "", Icon = "bebidas.png", IdCategoria = Util.CAT_BEBIDAS_ID });

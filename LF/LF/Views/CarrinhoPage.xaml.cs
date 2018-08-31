@@ -87,6 +87,15 @@ namespace LF.Views
                 else
                 {
                     Util.PedidoAtual.NumeroMesa = NumeroMesa;
+
+                    if (Util.UsuarioLogado == null)
+                    {
+                        Navigation.PushModalAsync(new LoginPage());
+                    }
+                    else
+                    {
+                        //finaliza o pedido
+                    }
                 }
             }
             else
