@@ -74,6 +74,10 @@ namespace LF.Views
 
                             await Navigation.PopModalAsync();
                         }
+                        else
+                        {
+                            await DisplayAlert("Erro", "Erro ao Cadastrar", "Cancelar");
+                        }
 
                     }
                 }
