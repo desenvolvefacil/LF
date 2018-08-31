@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -31,6 +32,8 @@ namespace LF.Models
 
 
         //converte a foto 64b para ImageSourve
+        [JsonIgnore]
+        [XmlIgnore]
         public ImageSource FotoProduto
         {
             get

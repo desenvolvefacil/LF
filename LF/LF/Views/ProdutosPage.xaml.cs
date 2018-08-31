@@ -30,6 +30,17 @@ namespace LF.Views
 
             ProdutosListView.ItemsSource = Items;
 
+            /*
+            List<ProdutoModel> lista = new List<ProdutoModel>();
+
+            for(int i = 0; i < 5; i++)
+            {
+                lista.Add(new ProdutoModel());
+            }
+
+            string aaa = Newtonsoft.Json.JsonConvert.SerializeObject(lista);
+
+            int b = 10;*/
 
             /*
             //teste para verificar o post de cadastro

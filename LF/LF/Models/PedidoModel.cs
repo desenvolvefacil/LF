@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -44,6 +45,7 @@ namespace LF.Models
         public string Hora { get; set; }
 
         [XmlIgnore]
+        [JsonIgnore]
         public float ValorTotalPedido
         {
             get
@@ -60,6 +62,7 @@ namespace LF.Models
         }
 
         [XmlIgnore]
+        [JsonIgnore]
         public string NomeStatus
         {
             get

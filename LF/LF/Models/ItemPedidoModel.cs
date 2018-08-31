@@ -36,6 +36,7 @@ namespace LF.Models
         }
 
         [XmlIgnore]
+        [JsonIgnore]
         public float ValorTotal
         {
             get
@@ -45,6 +46,7 @@ namespace LF.Models
         }
 
         [XmlIgnore]
+        [JsonIgnore]
         public string NomeProduto
         {
             get
@@ -54,6 +56,7 @@ namespace LF.Models
         }
 
         [XmlIgnore]
+        [JsonIgnore]
         public ImageSource FotoProduto
         {
             get
@@ -63,6 +66,7 @@ namespace LF.Models
         }
 
         [XmlIgnore]
+        [JsonIgnore]
         public float ValorProduto
         {
             get
