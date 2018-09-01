@@ -16,7 +16,9 @@
                 VerticalOptions="FillAndExpand"
                  HasUnevenRows="true"
                  IsPullToRefreshEnabled="true"
-                 CachingStrategy="RecycleElement">
+                 CachingStrategy="RecycleElement"
+                          ItemSelected="PedidosListView_ItemSelectedAsync"
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

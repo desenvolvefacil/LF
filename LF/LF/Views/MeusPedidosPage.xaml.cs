@@ -61,5 +61,20 @@ namespace LF.Views
             var parentPage = this.Parent as TabbedPage;
             parentPage.CurrentPage = parentPage.Children[0];
         }
+
+        private async Task PedidosListView_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as PedidoModel;
+            if (item == null) {
+
+            }
+            else {
+
+                await Navigation.PushModalAsync(new ItemPedidoPage() { IdPedido=item.Id});
+
+                // Manually deselect item.
+                PedidosListView.SelectedItem = null;
+            }
+        }
     }
 }
