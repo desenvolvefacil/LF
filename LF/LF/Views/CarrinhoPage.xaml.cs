@@ -2,11 +2,6 @@
 using LF.Utils;
 using LF.WS;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -70,7 +65,7 @@ namespace LF.Views
             TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
-        private async Task Fechar_Pedido_Clicked(object sender, EventArgs e)
+        private async void Fechar_Pedido_Clicked(object sender, EventArgs e)
         {
             //verifica se tem items no Pedido
             if (Util.PedidoAtual != null && Util.PedidoAtual.Items.Count > 0)
@@ -91,7 +86,7 @@ namespace LF.Views
 
                     if (Util.UsuarioLogado == null)
                     {
-                        Navigation.PushModalAsync(new LoginPage());
+                       await Navigation.PushModalAsync(new LoginPage());
                     }
                     else
                     {
@@ -106,10 +101,7 @@ namespace LF.Views
                         }
 
 
-                        string aaa = Newtonsoft.Json.JsonConvert.SerializeObject(Util.PedidoAtual);
-
-
-                        
+                        //string aaa = Newtonsoft.Json.JsonConvert.SerializeObject(Util.PedidoAtual);
 
                         //finaliza o pedido no ws
                         PedidoModel ped = await new PedidoWS().AddPedidoAsyc(Util.PedidoAtual);
@@ -124,6 +116,8 @@ namespace LF.Views
                             //redireciona pra tela de pedidos
                             /*var parentPage = this.Parent as TabbedPage;
                             parentPage.CurrentPage = parentPage.Children[3];*/
+
+                            //Application.Current.MainPage = new MainPage();
 
                         }
 

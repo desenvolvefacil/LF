@@ -14,6 +14,8 @@ namespace LF.Views
         {
             InitializeComponent();
 
+
+
             //deixa a barra de menu na parte debaixo no android
             //da pani nos icones
             //On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
