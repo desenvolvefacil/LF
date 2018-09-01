@@ -5,9 +5,15 @@
              Title="Meus Pedidos">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Bem Vindo: " FontAttributes="Bold"/>
+                <Label Text="" x:Name="UsuarioLabel"/>
+                <Button Text="Sair" HorizontalOptions="End" Clicked="Sair_Clicked" />
+            </StackLayout>
+            <StackLayout>
+                
+            </StackLayout>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

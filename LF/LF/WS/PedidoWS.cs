@@ -13,7 +13,7 @@ namespace LF.WS
         [Post("/pedido/")]
         Task<PedidoModel> AddPedidoAsyc([Body]PedidoModel ped);
 
-        [Get("/pedidos/")]
+        [Get("/pedidos/{IdUsuario}")]
         Task<List<PedidoModel>> GetPedidosAsync(int IdUsuario);
     }
 

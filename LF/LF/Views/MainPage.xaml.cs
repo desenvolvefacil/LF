@@ -14,7 +14,7 @@ namespace LF.Views
         {
             InitializeComponent();
 
-
+            GC.Collect();
 
             //deixa a barra de menu na parte debaixo no android
             //da pani nos icones

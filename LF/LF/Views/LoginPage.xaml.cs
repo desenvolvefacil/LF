@@ -22,7 +22,14 @@ namespace LF.Views
 			InitializeComponent ();
 		}
 
-        private async void Logar_Clicked(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
+        {
+            App.Current.MainPage = new MainPage();
+
+            return true;
+        }
+
+            private async void Logar_Clicked(object sender, EventArgs e)
         {
             UsuarioModel usu = new UsuarioModel() { Email=LoginEmail.Text,Senha=LoginSenha.Text};
 
@@ -32,7 +39,7 @@ namespace LF.Views
             {
                 Util.UsuarioLogado = usu;
 
-                Navigation.PopModalAsync();
+                await Navigation.PopModalAsync();
             }
         }
 
@@ -51,7 +58,7 @@ namespace LF.Views
                 if (!IsValidEmail(CadastroEmail.Text))
                 {
                     await DisplayAlert("Email Inválido", "Digite seu Email", "Cancelar");
-                    CadastroNome.Focus();
+                    CadastroEmail.Focus();
                 }
                 else
                 {
@@ -60,7 +67,7 @@ namespace LF.Views
                     if (String.IsNullOrWhiteSpace(CadastroSenha.Text) || CadastroSenha.Text.Length < 5)
                     {
                         await DisplayAlert("Senha Inválida", "Digite sua Senha", "Cancelar");
-                        CadastroNome.Focus();
+                        CadastroSenha.Focus();
                     }
                     else
                     {
