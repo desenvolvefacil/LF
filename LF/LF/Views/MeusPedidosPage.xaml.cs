@@ -32,7 +32,7 @@ namespace LF.Views
 
                 List<PedidoModel> listaPedidos = await new PedidoWS().GetPedidosAsync(Util.UsuarioLogado.Id);
 
-                
+                PedidosListView.ItemsSource = listaPedidos;
 
 
             }

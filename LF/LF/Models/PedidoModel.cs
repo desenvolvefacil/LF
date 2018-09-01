@@ -81,6 +81,24 @@ namespace LF.Models
             }
         }
 
+        [JsonIgnore]
+        public string CorStatus
+        {
+            get
+            {
+                switch (this.Status.ToString())
+                {
+                    case "1":
+                        {
+                            return "Green";
+                        }
+                    default:
+                        {
+                            return "Red";
+                        }
+                }
+            }
+        }
 
         public void AddProduto(ProdutoModel p)
         {
