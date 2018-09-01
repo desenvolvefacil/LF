@@ -8,32 +8,31 @@ using Xamarin.Forms;
 
 namespace LF.Models
 {
-    [Serializable]
+    [JsonObject]
     public class ProdutoModel
     {
-        [XmlElement(ElementName = "id")]
+        [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
-        [XmlElement(ElementName = "nome")]
+        [JsonProperty(PropertyName = "nome")]
         public string Nome { get; set; }
 
-        [XmlElement(ElementName = "descricao")]
+        [JsonProperty(PropertyName = "descricao")]
         public string Descricao { get; set; }
 
-        [XmlElement(ElementName = "valor")]
+        [JsonProperty(PropertyName = "valor")]
         public float Valor { get; set; }
 
-        [XmlElement(ElementName = "Categoria")]
+        [JsonProperty(PropertyName = "categoria")]
         public int Categoria { get; set; }
 
-        [XmlElement(ElementName = "foto")]
+        [JsonProperty(PropertyName = "foto")]
         public string Foto { get; set; }
 
 
 
         //converte a foto 64b para ImageSourve
         [JsonIgnore]
-        [XmlIgnore]
         public ImageSource FotoProduto
         {
             get

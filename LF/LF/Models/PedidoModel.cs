@@ -10,41 +10,41 @@ using Xamarin.Forms;
 
 namespace LF.Models
 {
-    [Serializable]
+    [JsonObject]
     public class PedidoModel
     {
         public PedidoModel()
         {
-            this.Items = new ObservableCollection<ItemPedidoModel>();
+            this.Items = new List<ItemPedidoModel>();
             this.Id = 0;
         }
 
 
-        [XmlElement(ElementName = "id")]
+        [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
 
-        [XmlElement(ElementName = "idCliente")]
+        [JsonProperty(PropertyName = "idCliente")]
         public int IdCliente { get; set; }
 
-        [XmlElement(ElementName = "items")]
-        public ObservableCollection<ItemPedidoModel> Items { get; set; }
+        [JsonProperty(PropertyName = "items")]
+        public List<ItemPedidoModel> Items { get; set; }
 
-        [XmlElement(ElementName = "numeroMesa")]
+        [JsonProperty(PropertyName = "numeroMesa")]
         public int NumeroMesa { get; set; }
 
-        [XmlElement(ElementName = "status")]
+        [JsonProperty(PropertyName = "status")]
         public int Status { get; set; }
 
-        [XmlElement(ElementName = "valorTotal")]
+        [JsonProperty(PropertyName = "valorTotal")]
         public float ValorTotal { get; set; }
 
-        [XmlElement(ElementName = "data")]
+        [JsonProperty(PropertyName = "data")]
         public String Data { get; set; }
 
-        [XmlElement(ElementName = "hora")]
+        [JsonProperty(PropertyName = "hora")]
         public string Hora { get; set; }
 
-        [XmlIgnore]
+
         [JsonIgnore]
         public float ValorTotalPedido
         {
@@ -61,7 +61,7 @@ namespace LF.Models
             }
         }
 
-        [XmlIgnore]
+
         [JsonIgnore]
         public string NomeStatus
         {

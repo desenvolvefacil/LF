@@ -19,7 +19,7 @@ namespace LF.Views
 
         public ProdutosPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
         protected async override void OnAppearing()

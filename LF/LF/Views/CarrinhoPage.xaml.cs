@@ -70,7 +70,7 @@ namespace LF.Views
             TotalPedidoLabel.Text = String.Format("{0:C}", Util.PedidoAtual.ValorTotalPedido);
         }
 
-        private async void Fechar_Pedido_Clicked(object sender, EventArgs e)
+        private async Task Fechar_Pedido_Clicked(object sender, EventArgs e)
         {
             //verifica se tem items no Pedido
             if (Util.PedidoAtual != null && Util.PedidoAtual.Items.Count > 0)
@@ -95,19 +95,35 @@ namespace LF.Views
                     }
                     else
                     {
+                        Util.PedidoAtual.IdCliente = Util.UsuarioLogado.Id;
+
+                        Util.PedidoAtual.Data = DateTime.Now.ToShortDateString();
+                        Util.PedidoAtual.Hora = DateTime.Now.ToShortTimeString();
+
+                        foreach (ItemPedidoModel it in Util.PedidoAtual.Items)
+                        {
+                            it.Produto.Foto = null;
+                        }
+
+
+                        string aaa = Newtonsoft.Json.JsonConvert.SerializeObject(Util.PedidoAtual);
+
+
+                        
+
                         //finaliza o pedido no ws
                         PedidoModel ped = await new PedidoWS().AddPedidoAsyc(Util.PedidoAtual);
                         
                         if(ped!=null && ped.Id > 0)
                         {
-                            await DisplayAlert(ped.Id.ToString(), "Pedido Realizado com Sucesso", "Fechar");
+                            //await DisplayAlert("Ped Nº "+ ped.Id.ToString(), "Pedido Realizado com Sucesso", "Fechar");
 
                             //zera o pedido atual
-                            Util.PedidoAtual = null;
+                            Util.PedidoAtual.Items.Clear();
 
                             //redireciona pra tela de pedidos
-                            var parentPage = this.Parent as TabbedPage;
-                            parentPage.CurrentPage = parentPage.Children[3];
+                            /*var parentPage = this.Parent as TabbedPage;
+                            parentPage.CurrentPage = parentPage.Children[3];*/
 
                         }
 

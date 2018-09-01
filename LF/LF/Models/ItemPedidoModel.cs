@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -8,7 +9,7 @@ using Xamarin.Forms;
 
 namespace LF.Models
 {
-    [Serializable]
+    [JsonObject]
     public class ItemPedidoModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -19,11 +20,11 @@ namespace LF.Models
         }
 
 
-        [XmlElement(ElementName = "qtd")]
+        [JsonProperty(PropertyName = "qtd")]
         public int Qtd { get; set; }
            
 
-        [XmlElement(ElementName = "produto")]
+        [JsonProperty(PropertyName = "produto")]
         public ProdutoModel Produto;
 
         public ItemPedidoModel(ProdutoModel p)
