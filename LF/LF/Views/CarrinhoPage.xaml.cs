@@ -113,11 +113,23 @@ namespace LF.Views
                             //zera o pedido atual
                             Util.PedidoAtual.Items.Clear();
 
+                            /**
+                             * 
+                             * 
+                             * 
+                             * Deveria funcionar assim
+                             * 
+                             * */
                             //redireciona pra tela de pedidos
                             /*var parentPage = this.Parent as TabbedPage;
                             parentPage.CurrentPage = parentPage.Children[3];*/
 
-                            //Application.Current.MainPage = new MainPage();
+
+
+                            /*
+                             * Gambiarra pra fazer funcionar
+                             * */
+                            Application.Current.MainPage = new MainPage();
 
                         }
 

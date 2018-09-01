@@ -27,6 +27,11 @@ namespace LF.Views
             Children.Add(new CarrinhoPage() { Title = "", Icon = "carrinho.png" });
 
 
+            if (Util.UsuarioLogado != null)
+            {
+                CurrentPage = Children[3];
+            }
+
         }
     }
 }
