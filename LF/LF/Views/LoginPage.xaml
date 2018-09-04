@@ -1,20 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LF.Views.LoginPage">
+             x:Class="LF.Views.LoginPage"
+             BackgroundImage="bg_login">
     <ContentPage.Content>
-        <StackLayout>
-            
-            <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-            <Entry x:Name="LoginEmail" Placeholder="Digite seu Email" Keyboard="Email" />
+        <StackLayout Padding="5">
+
+            <Image Source="logo.png" VerticalOptions="Center"/>
+            <Entry x:Name="LoginEmail" Placeholder="Digite seu E-mail" Keyboard="Email" />
             <Entry x:Name="LoginSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
-            <Button Text="Logar" Clicked="Logar_Clicked"/>
+            <Button 
+                BackgroundColor="LightBlue"
+                FontAttributes="Bold"
+                BorderRadius="10"
+                Text="Logar" 
+                Clicked="Logar_Clicked"/>
 
             <Label Text="Cadastre-se" HorizontalTextAlignment="Center" FontAttributes="Bold" />
             <Entry x:Name="CadastroNome" Placeholder="Digite seu Nome" />
-            <Entry x:Name="CadastroEmail" Placeholder="Digite seu Email" Keyboard="Email" />
+            <Entry x:Name="CadastroEmail" Placeholder="Digite seu E-mail" Keyboard="Email" />
             <Entry x:Name="CadastroSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
-            <Button Text="Cadastrar" Clicked="Cadastrar_Clicked"/>
+            <Button 
+                BackgroundColor="LightSalmon"
+                FontAttributes="Bold"
+                BorderRadius="10"
+                Text="Cadastrar" 
+                Clicked="Cadastrar_Clicked"/>
 
 
         </StackLayout>
