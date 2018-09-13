@@ -49,7 +49,7 @@ namespace LF.Views
             //valida o nome
             if (String.IsNullOrWhiteSpace(CadastroNome.Text))
             {
-                await DisplayAlert("Nome Inválido", "Digite seu nome", "Cancelar");
+                await DisplayAlert("Nome inválido!", "Digite seu nome.", "Cancelar");
                 CadastroNome.Focus();
             }
             else
@@ -57,7 +57,7 @@ namespace LF.Views
                 //valida o email
                 if (!IsValidEmail(CadastroEmail.Text))
                 {
-                    await DisplayAlert("Email Inválido", "Digite seu Email", "Cancelar");
+                    await DisplayAlert("E-mail inválido!", "Digite seu e-mail.", "Cancelar");
                     CadastroEmail.Focus();
                 }
                 else
@@ -66,7 +66,7 @@ namespace LF.Views
                     //valida a senha
                     if (String.IsNullOrWhiteSpace(CadastroSenha.Text) || CadastroSenha.Text.Length < 5)
                     {
-                        await DisplayAlert("Senha Inválida", "Digite sua Senha", "Cancelar");
+                        await DisplayAlert("Senha inválida!", "Digite sua senha.", "Cancelar");
                         CadastroSenha.Focus();
                     }
                     else
@@ -84,7 +84,7 @@ namespace LF.Views
                         }
                         else
                         {
-                            await DisplayAlert("Erro", "Erro ao Cadastrar", "Cancelar");
+                            await DisplayAlert("Erro!", "Erro ao cadastrar!", "Cancelar");
                         }
 
                     }

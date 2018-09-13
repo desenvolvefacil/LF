@@ -77,7 +77,7 @@ namespace LF.Views
 
                 if (NumeroMesa <= 0)
                 {
-                    DisplayAlert("Número da Mesa", "Digite o número de sua mesa", "Cancelar");
+                    DisplayAlert("Número da mesa.", "Por favor, digite o número de sua mesa.", "Cancelar");
                     NumeroMesaEntry.Focus();
                 }
                 else
@@ -108,7 +108,7 @@ namespace LF.Views
                         
                         if(ped!=null && ped.Id > 0)
                         {
-                            await DisplayAlert("Ped Nº "+ ped.Id.ToString(), "Pedido Realizado com Sucesso", "Fechar");
+                            await DisplayAlert("Ped Nº "+ ped.Id.ToString(), "Pedido realizado com sucesso!", "Fechar");
 
                             //zera o pedido atual
                             Util.PedidoAtual.Items.Clear();
@@ -138,7 +138,7 @@ namespace LF.Views
             }
             else
             {
-                DisplayAlert("Pedido sem items", "Você esta tentando fechar um pedido sem items", "Cancelar");
+                DisplayAlert("Pedido sem itens!", "Você esta tentando fechar um pedido sem itens!", "Cancelar");
             }
         }
     }

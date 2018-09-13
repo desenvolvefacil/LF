@@ -4,27 +4,29 @@
              x:Class="LF.Views.LoginPage"
              BackgroundImage="bg_login">
     <ContentPage.Content>
-        <StackLayout Padding="5">
+        <StackLayout Padding="20">
 
-            <Image Source="logo.png" VerticalOptions="Center"/>
-            <Entry x:Name="LoginEmail" Placeholder="Digite seu E-mail" Keyboard="Email" />
-            <Entry x:Name="LoginSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
+            <Image Source="logo.png" VerticalOptions="Center" WidthRequest="140" HeightRequest="157"/>
+            <Entry x:Name="LoginEmail" Placeholder="Digite seu e-mail..." Keyboard="Email" />
+            <Entry x:Name="LoginSenha" Placeholder="Digite sua senha..." IsPassword="True"/>
             <Button 
                 BackgroundColor="LightBlue"
                 FontAttributes="Bold"
                 BorderRadius="10"
-                Text="Logar" 
+                Text="Sign in" 
                 Clicked="Logar_Clicked"/>
 
-            <Label Text="Cadastre-se" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-            <Entry x:Name="CadastroNome" Placeholder="Digite seu Nome" />
-            <Entry x:Name="CadastroEmail" Placeholder="Digite seu E-mail" Keyboard="Email" />
-            <Entry x:Name="CadastroSenha" Placeholder="Digite sua Senha" IsPassword="True"/>
+            <StackLayout Padding="5"></StackLayout>
+            <Image Source="signup.png" VerticalOptions="Center" WidthRequest="85" HeightRequest="30"/>
+
+            <Entry x:Name="CadastroNome" Placeholder="Digite seu nome..." />
+            <Entry x:Name="CadastroEmail" Placeholder="Digite seu e-mail..." Keyboard="Email" />
+            <Entry x:Name="CadastroSenha" Placeholder="Digite sua senha..." IsPassword="True"/>
             <Button 
                 BackgroundColor="LightSalmon"
                 FontAttributes="Bold"
                 BorderRadius="10"
-                Text="Cadastrar" 
+                Text="Sign up" 
                 Clicked="Cadastrar_Clicked"/>
 
 
