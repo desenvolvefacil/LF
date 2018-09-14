@@ -5,9 +5,9 @@
              Title="Meus Pedidos"
              BackgroundImage="bg_pedidos">
     <ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout Padding="15">
             <StackLayout Orientation="Horizontal">
-                <Label Text="Bem Vindo: " FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Text="Bem vindo: " FontAttributes="Bold" VerticalOptions="Center"/>
                 <Label Text="" x:Name="UsuarioLabel" VerticalTextAlignment="Center"/>
                 <Button
                     BackgroundColor="LightBlue"
@@ -33,11 +33,11 @@
 
                                 <Grid Padding="10">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="35*" />
                                         <!--0-->
                                         <ColumnDefinition Width="30*" />
                                         <!--1-->
-                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="35*" />
                                         <!--1-->
                                     </Grid.ColumnDefinitions>
 

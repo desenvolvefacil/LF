@@ -108,7 +108,7 @@ namespace LF.Views
                         
                         if(ped!=null && ped.Id > 0)
                         {
-                            await DisplayAlert("Ped Nº "+ ped.Id.ToString(), "Pedido realizado com sucesso!", "Fechar");
+                            await DisplayAlert("Pedido n.º: "+ ped.Id.ToString(), "Pedido realizado com sucesso!", "Fechar");
 
                             //zera o pedido atual
                             Util.PedidoAtual.Items.Clear();
