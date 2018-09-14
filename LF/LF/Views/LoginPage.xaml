@@ -13,7 +13,7 @@
                 BackgroundColor="LightBlue"
                 FontAttributes="Bold"
                 BorderRadius="10"
-                Text="Sign in" 
+                Text="Sign in"
                 Clicked="Logar_Clicked"/>
 
             <StackLayout Padding="5"></StackLayout>
