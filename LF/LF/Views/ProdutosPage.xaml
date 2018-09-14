@@ -14,7 +14,7 @@
                     <DataTemplate>
                         <ViewCell>
 
-                            <Grid>
+                            <Grid Padding="10">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="7*" />
                                     <!--0-->
@@ -37,7 +37,15 @@
                                 </StackLayout>
 
                                 <Label Grid.Column="1" Grid.Row="0" Text="{Binding Valor,StringFormat=\{0:C\}}"/>
-                                <Button Text="Pedir" Grid.Column="1" Grid.Row="1" Clicked="Add_Carrinho_Clicked" CommandParameter="{Binding}" />
+                                <Button 
+                                    BackgroundColor="LightBlue"
+                                    FontAttributes="Bold"
+                                    BorderRadius="10"
+                                    Text="Pedir" 
+                                    Grid.Column="1" 
+                                    Grid.Row="1" 
+                                    Clicked="Add_Carrinho_Clicked" 
+                                    CommandParameter="{Binding}" />
 
                             </Grid>
 

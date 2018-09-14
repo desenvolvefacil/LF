@@ -2,13 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LF.Views.MeusPedidosPage"
-             Title="Meus Pedidos">
+             Title="Meus Pedidos"
+             BackgroundImage="bg_pedidos">
     <ContentPage.Content>
         <StackLayout Padding="20">
             <StackLayout Orientation="Horizontal">
-                <Label Text="Bem Vindo: " FontAttributes="Bold"/>
-                <Label Text="" x:Name="UsuarioLabel"/>
-                <Button Text="Sair" HorizontalOptions="End" Clicked="Sair_Clicked" />
+                <Label Text="Bem Vindo: " FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Text="" x:Name="UsuarioLabel          " VerticalTextAlignment="Center"/>
+                <Button
+                    BackgroundColor="LightBlue"
+                    FontAttributes="Bold"
+                    BorderRadius="10"
+                    Text="Sair" 
+                    HorizontalOptions="End" 
+                    Clicked="Sair_Clicked" />
+                
             </StackLayout>
             <StackLayout>
 
@@ -23,7 +31,7 @@
                         <DataTemplate>
                             <ViewCell>
 
-                                <Grid>
+                                <Grid Padding="10">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="33*" />
                                         <!--0-->
