@@ -3,6 +3,6 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:LF.Views"
             x:Class="LF.Views.MainPage"
+           
             >
-    
 </TabbedPage>
